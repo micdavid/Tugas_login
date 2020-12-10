@@ -1,0 +1,70 @@
+input, button {
+    margin: 10px 0px;
+    height: 25px;
+    border: 1px solid rgb(192, 164, 164);
+    padding: 0px 7px;
+} 
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+
+.modal-dialog {
+    max-width: fit-content;
+    margin: 60px auto;
+    position: relative;
+    width: auto;
+}
+
+.modal-content {
+    height: 75px;
+    text-align: center;
+    background-color: rgb(248, 245, 245);
+    margin-top: 450px;
+    width: 750px;
+}
+
+.modal.show {
+    animation: fade 2.5s forwards;
+    display: block;
+}
+
+@keyframes fade {
+    as {
+        opacity: 0;
+        transform: scale(1);
+    } 50% {
+        opacity: 1;
+        transform: scale(1.1);
+    } 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal.invalid {
+    color: #ff0000;
+    text-align: center;
+    font-size: 20px;
+    position: static;
+    background-color: rgb(255, 255, 255);
+}
+
+.modal-content .modal-header {
+    padding: 35px 35px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 200px auto;
+}
