@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Tugas_login.css">
+</head>
+<body id="body">
+    <div class="modal success">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Success
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form id="form" name="login">
+        <h2>Form Login</h2>
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Pasword">
+        <button data-toggle="modal" type="submit">Login</button>
+        <div class="modal invalid">Invalid username or password</div>
+    </form>
+
+    <script>
+
+            let htmlBody = document.getElementById("body");
+            let button = document.querySelector('button[data-toggle="modal"]');
+            let modalSuccess =  document.querySelector('.success');
+            let modalInvalid =  document.querySelector('.invalid');
+            button.addEventListener('click', function() {
+                let username = document.forms["login"]["username"].value;
+                let password = document.forms["login"]["password"].value;
+
+                if (username == "pweb_C" && password == "123123") {
+                    modalSuccess.classList.add('show');
+                    modalInvalid.classList.remove('show');
+                } else {
+                    modalInvalid.classList.add('show');
+                }
+            });
+            modalSuccess.addEventListener('click', function() {
+                this.classList.remove('show');
+            });   
+            let formLogin = document.getElementById("form")
+            formLogin.addEventListener("click", function(event){
+                event.preventDefault()
+            });
+
+    </script>
+</body>
+</html>
